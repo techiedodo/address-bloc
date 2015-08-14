@@ -95,11 +95,14 @@ require_relative "../models/address_book"
     system "clear" 
     puts "Enter record number"
 
-    number = gets.chomp.to_i
-    if number > @address_book.entries.count
-      puts "Selection not available"
-    else
-      puts @address_book.entries[number-1]
+    number = gets.chomp
+
+    if number.to_i > @address_book.entries.count
+      puts "Record not available"
+    elsif number.to_i.to_s == number
+      puts @address_book.entries[(number.to_i)-1]
+    else 
+      puts "Not valid entry number"
     end
   end
 
