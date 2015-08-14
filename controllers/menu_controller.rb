@@ -53,19 +53,19 @@ require_relative "../models/address_book"
    end
 
   def view_all_entries
- 
+
     @address_book.entries.each do |entry|
     system "clear"
     puts entry.to_s
 
     entry_submenu(entry)
     end
- 
+
     system "clear"
     puts "End of entries"
    end
 
- 
+
   def create_entry
 
     system "clear"
@@ -77,51 +77,51 @@ require_relative "../models/address_book"
     phone = gets.chomp
     print "Email: "
     email = gets.chomp
- 
+
 
     @address_book.add_entry(name, phone, email)
- 
+
     system "clear"
     puts "New entry created"
   end
- 
+
   def search_entries
   end
- 
+
   def read_csv
   end
 
   def view_entry_number
-    system "clear" 
+    system "clear"
     puts "Enter record number"
 
     number = gets.chomp
 
-    if number.to_i > @address_book.entries.count
+    if number.to_i <= @address_book.entries.count
       puts "Record not available"
     elsif number.to_i.to_s == number
       puts @address_book.entries[(number.to_i)-1]
-    else 
+    else
       puts "Not valid entry number"
     end
   end
 
   def entry_submenu(entry)
- 
+
     puts "n - next entry"
     puts "d - delete entry"
     puts "e - edit this entry"
     puts "m - return to main menu"
- 
+
     selection = gets.chomp
- 
+
     case selection
- 
+
     when "n"
- 
+
     when "d"
     when "e"
- 
+
     when "m"
       system "clear"
       main_menu
