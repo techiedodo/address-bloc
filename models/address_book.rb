@@ -21,5 +21,13 @@ class AddressBook
     @entries.insert(index, Entry.new(name, phone, email))
   end
 
-
+  def remove_entry(name, phone, email)
+    @entries.each do |remove|
+      if (name == remove.name) && (phone == remove.phone) && (email == remove.email)
+        @entries.delete(index, Entry.new(name, phone, email))
+      else
+        p "Not in system"
+      end
+      end
+  end
 end
