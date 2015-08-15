@@ -47,10 +47,14 @@ class AddressBook
 
     return nil
   end
-  def iterative_search(name)
-    entries.each {|entry|
-      if 
-    }
 
-  end
+  def iterative_search(name)
+      entries.each do |found|
+      if
+          return 
+        else
+          return nil
+        end
+      end
+    end
 end
