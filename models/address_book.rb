@@ -49,12 +49,14 @@ class AddressBook
   end
 
   def iterative_search(name)
+      index = 0
       entries.each do |found|
-      if
-          return 
+      if (name == found.name)
+          return entries[index]
         else
-          return nil
         end
+        index+=1
       end
+      return nil #why do we need the index and why is the nil out of the if statement
     end
 end
